@@ -11,7 +11,7 @@
     }
   ],
   "require": {
-    "swarming/magento2-buzzi-publish": "^1.1.0"
+    "swarming/magento2-buzzi-publish": "dev-develop"
   },
   "autoload": {
     "files": ["registration.php"],

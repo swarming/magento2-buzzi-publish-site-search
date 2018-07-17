@@ -1,0 +1,20 @@
+<?php
+/**
+ * @var $block \Buzzi\PublishSiteSearch\Block\EventTrigger
+ */
+?>
+
+<div class="buzzi-site-search-container" data-role="buzzi-site-search" data-bind="scope: 'buzzi-site-search'">
+</div>
+
+<script type="text/x-magento-init">
+    {
+        "[data-role=buzzi-site-search]": {
+            "Buzzi_PublishSiteSearch/js/event-trigger": {
+                "event_type": "<?= $block->escapeJs($block->getEventType()) ?>",
+                "search_form": "search_mini_form",
+                "page_url": "<?= $block->escapeUrl($block->getCurrentUrl()) ?>"
+            }
+        }
+    }
+</script>
