@@ -41,20 +41,24 @@ class DataBuilder
     }
 
     /**
-     * @param array $searchData
+     * @param string $searchQuery
+     * @param string $pageUrl
+     * @param string $searchType
      * @param \Magento\Customer\Model\Customer|null $customer
      * @param string|null $customerEmail
      * @return mixed[]
      */
-    public function getPayload(array $searchData, $customer = null, $customerEmail = null)
+    public function getPayload($searchQuery, $pageUrl, $searchType = null, $customer = null, $customerEmail = null)
     {
         $payload = $this->dataBuilderBase->initBaseData(self::EVENT_TYPE);
 
         $payload['customer'] = $customer ? $this->dataBuilderCustomer->getCustomerData($customer) : ['email' => $customerEmail];
-        $payload['search_type'] = $searchData['search_type'];
-        $payload['search_query'] = $searchData['search_query'];
-        $payload['page_url'] = $searchData['page_url'];
+        $payload['search_query'] = $searchQuery;
+        $payload['page_url'] = $pageUrl;
 
+        if ($searchType) {
+            $payload['search_type'] = $searchType;
+        }
         $transport = new DataObject(['payload' => $payload]);
         $this->eventDispatcher->dispatch('buzzi_publish_site_search', ['transport' => $transport]);
 

@@ -35,6 +35,10 @@ class Packer implements PackerInterface
             throw new \InvalidArgumentException('Page URL and Search Query are required fields.');
         }
 
-        return $customer || $customerEmail ? $this->dataBuilder->getPayload($inputData, $customer, $customerEmail) : null;
+        $searchType = !empty($payload['search_type']) ? $payload['search_type'] : null;
+
+        return $customer || $customerEmail
+            ? $this->dataBuilder->getPayload($inputData['search_query'], $inputData['page_url'], $searchType, $customer, $customerEmail)
+            : null;
     }
 }

@@ -19,7 +19,7 @@ define([
         initialize: function () {
             this._super();
 
-            if (this.search_form && this.page_url) {
+            if (this.event_type && this.search_form && this.page_url) {
                 this.observeSearchForm();
             }
         },
