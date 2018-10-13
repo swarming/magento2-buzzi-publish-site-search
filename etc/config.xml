@@ -8,6 +8,7 @@
     <default>
         <buzzi_publish_events>
             <site_search>
+                <respect_accepts_marketing>0</respect_accepts_marketing>
                 <is_cron>1</is_cron>
                 <global_schedule>1</global_schedule>
             </site_search>
