@@ -46,6 +46,14 @@ class EventTrigger extends \Magento\Framework\View\Element\Template
     /**
      * @return string
      */
+    public function getSearchFormSelector()
+    {
+        return $this->configEvents->getValue(DataBuilder::EVENT_TYPE, 'search_form_selector');
+    }
+
+    /**
+     * @return string
+     */
     public function getCurrentUrl()
     {
         return $this->_urlBuilder->getCurrentUrl();

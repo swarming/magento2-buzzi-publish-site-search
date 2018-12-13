@@ -12,7 +12,7 @@
         "[data-role=buzzi-site-search]": {
             "Buzzi_PublishSiteSearch/js/event-trigger": {
                 "event_type": "<?= $block->escapeJsQuote($block->getEventType(), "\"") ?>",
-                "search_form": "search_mini_form",
+                "search_form_selector": "<?= $block->escapeJsQuote($block->getSearchFormSelector(), "\"") ?>",
                 "page_url": "<?= $block->escapeUrl($block->getCurrentUrl()) ?>"
             }
         }

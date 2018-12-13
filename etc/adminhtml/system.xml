@@ -13,6 +13,10 @@
                     <comment>If set to Yes, event data will only be sent for customers where the ‘Accepts Marketing’ attribute is set to Yes.</comment>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
+                <field id="search_form_selector" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Search Form Selector</label>
+                    <comment>The selector could be any supported by jQuery.</comment>
+                </field>
             </group>
         </section>
     </system>

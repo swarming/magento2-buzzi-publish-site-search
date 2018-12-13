@@ -11,6 +11,7 @@
                 <respect_accepts_marketing>0</respect_accepts_marketing>
                 <is_cron>1</is_cron>
                 <global_schedule>1</global_schedule>
+                <search_form_selector>form#search_mini_form</search_form_selector>
             </site_search>
         </buzzi_publish_events>
     </default>
